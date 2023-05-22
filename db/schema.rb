@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_161146) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_22_165554) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -49,6 +49,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_161146) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "buses", force: :cascade do |t|
+    t.integer "bus_number"
+    t.integer "driver_ID_id", null: false
+    t.integer "license_number"
+    t.string "chasissis_number"
+    t.string "model"
+    t.integer "capacity"
+    t.date "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["driver_ID_id"], name: "index_buses_on_driver_ID_id"
+  end
+
+  create_table "drivers", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.string "address"
+    t.string "gender"
+    t.date "date_of_birth"
+    t.string "nationality"
+    t.string "string"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -58,6 +83,56 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_161146) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "passengers", force: :cascade do |t|
+    t.string "name"
+    t.string "contact"
+    t.string "address"
+    t.integer "age"
+    t.string "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.string "route_name"
+    t.string "pick_up_point"
+    t.string "drop_off_point"
+    t.integer "distance"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer "route_id", null: false
+    t.integer "bus_id", null: false
+    t.time "departure_time"
+    t.time "arrival_time"
+    t.integer "duration_id", null: false
+    t.string "frequency"
+    t.string "weekly"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bus_id"], name: "index_schedules_on_bus_id"
+    t.index ["duration_id"], name: "index_schedules_on_duration_id"
+    t.index ["route_id"], name: "index_schedules_on_route_id"
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.integer "passenger_id", null: false
+    t.integer "route_id", null: false
+    t.integer "bus_id", null: false
+    t.datetime "booking_date"
+    t.integer "seat_number"
+    t.float "fare"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bus_id"], name: "index_tickets_on_bus_id"
+    t.index ["passenger_id"], name: "index_tickets_on_passenger_id"
+    t.index ["route_id"], name: "index_tickets_on_route_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,4 +152,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_161146) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "buses", "driver_IDs"
+  add_foreign_key "schedules", "buses"
+  add_foreign_key "schedules", "durations"
+  add_foreign_key "schedules", "routes"
+  add_foreign_key "tickets", "buses"
+  add_foreign_key "tickets", "passengers"
+  add_foreign_key "tickets", "routes"
 end

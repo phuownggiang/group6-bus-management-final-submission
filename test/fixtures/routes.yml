@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  route_name: MyString
+  pick_up_point: MyString
+  drop_off_point: MyString
+  distance: 1
+  duration: 1
+
+two:
+  route_name: MyString
+  pick_up_point: MyString
+  drop_off_point: MyString
+  distance: 1
+  duration: 1

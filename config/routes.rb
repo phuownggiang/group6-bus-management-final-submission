@@ -1,6 +1,12 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :passengers
+  resources :routes
+  resources :tickets
+  resources :schedules
+  resources :buses
+  resources :drivers
     authenticate :user, lambda { |u| u.admin? } do
       mount Sidekiq::Web => '/sidekiq'
     end

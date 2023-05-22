@@ -1,0 +1,50 @@
+<%= form_with(model: bus) do |form| %>
+<% if bus.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(bus.errors.count, "error") %> prohibited this bus from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% bus.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :bus_number, class: label_class %>
+          <%= form.number_field :bus_number, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :driver_ID_id, class: label_class %>
+          <%= form.text_field :driver_ID_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :license_number, class: label_class %>
+          <%= form.number_field :license_number, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :chasissis_number, class: label_class %>
+          <%= form.text_field :chasissis_number, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :model, class: label_class %>
+          <%= form.text_field :model, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :capacity, class: label_class %>
+          <%= form.number_field :capacity, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :year, class: label_class %>
+          <%= form.date_field :year, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if bus.persisted? %>
+<%= link_to "Cancel", bus, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", buses_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

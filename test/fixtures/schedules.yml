@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  route: one
+  bus: one
+  departure_time: 2023-05-22 23:13:55
+  arrival_time: 2023-05-22 23:13:55
+  duration: one
+  frequency: MyString
+  weekly: MyString
+  status: MyString
+
+two:
+  route: two
+  bus: two
+  departure_time: 2023-05-22 23:13:55
+  arrival_time: 2023-05-22 23:13:55
+  duration: two
+  frequency: MyString
+  weekly: MyString
+  status: MyString

@@ -1,0 +1,45 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Bus</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to buses_path, class: button_class(theme: "transparent") do %>
+      All Buses
+      <% end %>
+      <%= link_to edit_bus_path(@bus), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Bus number:</p>
+        <p><%= @bus.bus_number %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Driver id:</p>
+        <p><%= @bus.driver_ID %></p>
+      </li>
+      <li>
+        <p class="font-semibold">License number:</p>
+        <p><%= @bus.license_number %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Chasissis number:</p>
+        <p><%= @bus.chasissis_number %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Model:</p>
+        <p><%= @bus.model %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Capacity:</p>
+        <p><%= @bus.capacity %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Year:</p>
+        <p><%= @bus.year %></p>
+      </li>
+  </ul>
+</div>

@@ -1,0 +1,42 @@
+<%= form_with(model: route) do |form| %>
+<% if route.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(route.errors.count, "error") %> prohibited this route from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% route.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :route_name, class: label_class %>
+          <%= form.text_field :route_name, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :pick_up_point, class: label_class %>
+          <%= form.text_field :pick_up_point, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :drop_off_point, class: label_class %>
+          <%= form.text_field :drop_off_point, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :distance, class: label_class %>
+          <%= form.number_field :distance, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :duration, class: label_class %>
+          <%= form.number_field :duration, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if route.persisted? %>
+<%= link_to "Cancel", route, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", routes_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

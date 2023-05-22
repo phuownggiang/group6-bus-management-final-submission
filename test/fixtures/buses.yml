@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bus_number: 1
+  driver_ID: one
+  license_number: 1
+  chasissis_number: MyString
+  model: MyString
+  capacity: 1
+  year: 2023-05-22
+
+two:
+  bus_number: 1
+  driver_ID: two
+  license_number: 1
+  chasissis_number: MyString
+  model: MyString
+  capacity: 1
+  year: 2023-05-22

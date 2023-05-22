@@ -1,0 +1,42 @@
+<%= form_with(model: passenger) do |form| %>
+<% if passenger.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(passenger.errors.count, "error") %> prohibited this passenger from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% passenger.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :name, class: label_class %>
+          <%= form.text_field :name, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :contact, class: label_class %>
+          <%= form.text_field :contact, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :address, class: label_class %>
+          <%= form.text_field :address, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :age, class: label_class %>
+          <%= form.number_field :age, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :gender, class: label_class %>
+          <%= form.text_field :gender, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if passenger.persisted? %>
+<%= link_to "Cancel", passenger, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", passengers_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>
