@@ -10,4 +10,5 @@ class Bus < ApplicationRecord
     def year_of_manufacture_cannot_be_in_the_future
         errors.add(:year,"can't be in the future") if year.present? && year > Date.current
     end
+    
 end
