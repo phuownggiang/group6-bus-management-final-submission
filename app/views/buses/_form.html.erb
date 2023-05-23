@@ -16,8 +16,8 @@
           <%= form.number_field :bus_number, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :driver_ID_id, class: label_class %>
-          <%= form.text_field :driver_ID_id, class: input_class %>
+        <%= form.label :driver_id, class: label_class %>
+          <%= form.collection_select :driver_id, Driver.all, :id, :name, { promt:true }, id: 'driver-select' %>
       </div>
   <div class="mb-6">
         <%= form.label :license_number, class: label_class %>
@@ -33,7 +33,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :capacity, class: label_class %>
-          <%= form.number_field :capacity, class: input_class %>
+          <%= form.select :capacity, [['30 people','30 people'], ['50 people','50 people']], {}, class:'form-control' %>
       </div>
   <div class="mb-6">
         <%= form.label :year, class: label_class %>

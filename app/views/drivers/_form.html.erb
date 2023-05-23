@@ -25,7 +25,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :gender, class: label_class %>
-          <%= form.text_field :gender, class: input_class %>
+          <%= form.select :gender,[['Female','female'], ['Male','male']], {}, class:'form-control' %>
       </div>
   <div class="mb-6">
         <%= form.label :date_of_birth, class: label_class %>
@@ -34,10 +34,6 @@
   <div class="mb-6">
         <%= form.label :nationality, class: label_class %>
           <%= form.text_field :nationality, class: input_class %>
-      </div>
-  <div class="mb-6">
-        <%= form.label :string, class: label_class %>
-          <%= form.text_field :string, class: input_class %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>

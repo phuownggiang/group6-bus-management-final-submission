@@ -4,5 +4,6 @@ class Driver < ApplicationRecord
 
     validate :date_of_birth_cannot_be_in_the_future
     def date_of_birth_cannot_be_in_the_future
-        errors.add(:date_of_birth,"can't be in the future") if date_of_birth.present? && date_of_birth > Datetime.current
+        errors.add(:date_of_birth,"can't be in the future") if date_of_birth.present? && date_of_birth > Date.current
+    end
 end

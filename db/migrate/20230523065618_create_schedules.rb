@@ -7,7 +7,6 @@ class CreateSchedules < ActiveRecord::Migration[7.0]
       t.time :arrival_time
       t.references :duration, null: false, foreign_key: true
       t.string :frequency
-      t.string :weekly
       t.string :status
 
       t.timestamps

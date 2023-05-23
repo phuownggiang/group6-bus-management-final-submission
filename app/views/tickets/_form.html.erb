@@ -13,15 +13,15 @@
 
   <div class="mb-6">
         <%= form.label :passenger_id, class: label_class %>
-          <%= form.text_field :passenger_id, class: input_class %>
+          <%= form.collection_select :passenger_id, Passenger.all, :id, :name, { promt:true }, id: 'passenger-select' %>
       </div>
   <div class="mb-6">
         <%= form.label :route_id, class: label_class %>
-          <%= form.text_field :route_id, class: input_class %>
+          <%= form.collection_select :route_id , Route.all, :id, :route_name, { promt:true }, id: 'route-select' %>
       </div>
   <div class="mb-6">
         <%= form.label :bus_id, class: label_class %>
-          <%= form.text_field :bus_id, class: input_class %>
+          <%= form.collection_select :bus_id, Bus.all, :id, :bus_number, {promt:true}, id: 'buses-select' %>
       </div>
   <div class="mb-6">
         <%= form.label :booking_date, class: label_class %>
@@ -29,7 +29,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :seat_number, class: label_class %>
-          <%= form.number_field :seat_number, class: input_class %>
+          <%= form.select :seat_number, options_for_select(1..30) %>
       </div>
   <div class="mb-6">
         <%= form.label :fare, class: label_class %>

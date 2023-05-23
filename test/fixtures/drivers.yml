@@ -5,15 +5,13 @@ one:
   phone_number: MyString
   address: MyString
   gender: MyString
-  date_of_birth: 2023-05-22
+  date_of_birth: 2023-05-23
   nationality: MyString
-  string: MyString
 
 two:
   name: MyString
   phone_number: MyString
   address: MyString
   gender: MyString
-  date_of_birth: 2023-05-22
+  date_of_birth: 2023-05-23
   nationality: MyString
-  string: MyString

@@ -7,7 +7,6 @@ class CreateDrivers < ActiveRecord::Migration[7.0]
       t.string :gender
       t.date :date_of_birth
       t.string :nationality
-      t.string :string
 
       t.timestamps
     end

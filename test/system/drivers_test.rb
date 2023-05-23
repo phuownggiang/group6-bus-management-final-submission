@@ -20,7 +20,6 @@ class DriversTest < ApplicationSystemTestCase
     fill_in "Name", with: @driver.name
     fill_in "Nationality", with: @driver.nationality
     fill_in "Phone number", with: @driver.phone_number
-    fill_in "String", with: @driver.string
     click_on "Create Driver"
 
     assert_text "Driver was successfully created"
@@ -37,7 +36,6 @@ class DriversTest < ApplicationSystemTestCase
     fill_in "Name", with: @driver.name
     fill_in "Nationality", with: @driver.nationality
     fill_in "Phone number", with: @driver.phone_number
-    fill_in "String", with: @driver.string
     click_on "Update Driver"
 
     assert_text "Driver was successfully updated"

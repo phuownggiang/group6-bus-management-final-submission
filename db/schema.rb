@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_165554) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_065618) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_165554) do
 
   create_table "buses", force: :cascade do |t|
     t.integer "bus_number"
-    t.integer "driver_ID_id", null: false
+    t.integer "driver_id", null: false
     t.integer "license_number"
     t.string "chasissis_number"
     t.string "model"
@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_165554) do
     t.date "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["driver_ID_id"], name: "index_buses_on_driver_ID_id"
+    t.index ["driver_id"], name: "index_buses_on_driver_id"
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -69,7 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_165554) do
     t.string "gender"
     t.date "date_of_birth"
     t.string "nationality"
-    t.string "string"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -112,7 +111,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_165554) do
     t.time "arrival_time"
     t.integer "duration_id", null: false
     t.string "frequency"
-    t.string "weekly"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -152,7 +150,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_165554) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "buses", "driver_IDs"
+  add_foreign_key "buses", "drivers"
   add_foreign_key "schedules", "buses"
   add_foreign_key "schedules", "durations"
   add_foreign_key "schedules", "routes"

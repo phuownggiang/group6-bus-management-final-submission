@@ -2,7 +2,7 @@ class CreateBuses < ActiveRecord::Migration[7.0]
   def change
     create_table :buses do |t|
       t.integer :bus_number
-      t.references :driver_ID, null: false, foreign_key: true
+      t.references :driver, null: false, foreign_key: true
       t.integer :license_number
       t.string :chasissis_number
       t.string :model

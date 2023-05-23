@@ -21,7 +21,6 @@ class SchedulesTest < ApplicationSystemTestCase
     fill_in "Frequency", with: @schedule.frequency
     fill_in "Route", with: @schedule.route_id
     fill_in "Status", with: @schedule.status
-    fill_in "Weekly", with: @schedule.weekly
     click_on "Create Schedule"
 
     assert_text "Schedule was successfully created"
@@ -39,7 +38,6 @@ class SchedulesTest < ApplicationSystemTestCase
     fill_in "Frequency", with: @schedule.frequency
     fill_in "Route", with: @schedule.route_id
     fill_in "Status", with: @schedule.status
-    fill_in "Weekly", with: @schedule.weekly
     click_on "Update Schedule"
 
     assert_text "Schedule was successfully updated"

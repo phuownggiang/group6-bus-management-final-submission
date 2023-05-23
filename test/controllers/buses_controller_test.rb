@@ -17,7 +17,7 @@ class BusesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create bus" do
     assert_difference("Bus.count") do
-      post buses_url, params: { bus: { bus_number: @bus.bus_number, capacity: @bus.capacity, chasissis_number: @bus.chasissis_number, driver_ID_id: @bus.driver_ID_id, license_number: @bus.license_number, model: @bus.model, year: @bus.year } }
+      post buses_url, params: { bus: { bus_number: @bus.bus_number, capacity: @bus.capacity, chasissis_number: @bus.chasissis_number, driver_id: @bus.driver_id, license_number: @bus.license_number, model: @bus.model, year: @bus.year } }
     end
 
     assert_redirected_to bus_url(Bus.last)
@@ -34,7 +34,7 @@ class BusesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update bus" do
-    patch bus_url(@bus), params: { bus: { bus_number: @bus.bus_number, capacity: @bus.capacity, chasissis_number: @bus.chasissis_number, driver_ID_id: @bus.driver_ID_id, license_number: @bus.license_number, model: @bus.model, year: @bus.year } }
+    patch bus_url(@bus), params: { bus: { bus_number: @bus.bus_number, capacity: @bus.capacity, chasissis_number: @bus.chasissis_number, driver_id: @bus.driver_id, license_number: @bus.license_number, model: @bus.model, year: @bus.year } }
     assert_redirected_to bus_url(@bus)
   end
 

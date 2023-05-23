@@ -17,7 +17,7 @@ class BusesTest < ApplicationSystemTestCase
     fill_in "Bus number", with: @bus.bus_number
     fill_in "Capacity", with: @bus.capacity
     fill_in "Chasissis number", with: @bus.chasissis_number
-    fill_in "Driver id", with: @bus.driver_ID_id
+    fill_in "Driver", with: @bus.driver_id
     fill_in "License number", with: @bus.license_number
     fill_in "Model", with: @bus.model
     fill_in "Year", with: @bus.year
@@ -34,7 +34,7 @@ class BusesTest < ApplicationSystemTestCase
     fill_in "Bus number", with: @bus.bus_number
     fill_in "Capacity", with: @bus.capacity
     fill_in "Chasissis number", with: @bus.chasissis_number
-    fill_in "Driver id", with: @bus.driver_ID_id
+    fill_in "Driver", with: @bus.driver_id
     fill_in "License number", with: @bus.license_number
     fill_in "Model", with: @bus.model
     fill_in "Year", with: @bus.year

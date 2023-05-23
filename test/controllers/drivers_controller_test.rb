@@ -17,7 +17,7 @@ class DriversControllerTest < ActionDispatch::IntegrationTest
 
   test "should create driver" do
     assert_difference("Driver.count") do
-      post drivers_url, params: { driver: { address: @driver.address, date_of_birth: @driver.date_of_birth, gender: @driver.gender, name: @driver.name, nationality: @driver.nationality, phone_number: @driver.phone_number, string: @driver.string } }
+      post drivers_url, params: { driver: { address: @driver.address, date_of_birth: @driver.date_of_birth, gender: @driver.gender, name: @driver.name, nationality: @driver.nationality, phone_number: @driver.phone_number } }
     end
 
     assert_redirected_to driver_url(Driver.last)
@@ -34,7 +34,7 @@ class DriversControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update driver" do
-    patch driver_url(@driver), params: { driver: { address: @driver.address, date_of_birth: @driver.date_of_birth, gender: @driver.gender, name: @driver.name, nationality: @driver.nationality, phone_number: @driver.phone_number, string: @driver.string } }
+    patch driver_url(@driver), params: { driver: { address: @driver.address, date_of_birth: @driver.date_of_birth, gender: @driver.gender, name: @driver.name, nationality: @driver.nationality, phone_number: @driver.phone_number } }
     assert_redirected_to driver_url(@driver)
   end
 

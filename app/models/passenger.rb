@@ -1,2 +1,3 @@
 class Passenger < ApplicationRecord
-    validates_presence_of :name, :contact,:address, :age, :gender
+    validates_presence_of :name, :contact, :address, :age, :gender
+end
