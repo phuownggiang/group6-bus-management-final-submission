@@ -5,7 +5,7 @@ class CreateSchedules < ActiveRecord::Migration[7.0]
       t.references :bus, null: false, foreign_key: true
       t.time :departure_time
       t.time :arrival_time
-      t.references :duration, null: false, foreign_key: true
+      t.integer :duration
       t.string :frequency
       t.string :status
 

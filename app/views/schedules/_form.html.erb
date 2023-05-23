@@ -28,16 +28,16 @@
           <%= form.time_field :arrival_time, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :duration_id, class: label_class %>
-          <%= form.text_field :duration_id, class: input_class %>
+        <%= form.label :duration, class: label_class %>
+          <%= form.number_field :duration, class: input_class %>
       </div>
   <div class="mb-6">
         <%= form.label :frequency, class: label_class %>
-          <%= form.select :capacity, [['Daily','daily'], ['Weekly','weekly'], ['Monthly','monthly']], {}, class:'form-control' %>
+          <%= form.select :frequency, [['Daily', 'daily'], ['Weekly', 'weekly'], ['Monthly', 'monthly']], {}, class: 'form-control' %>
       </div>
   <div class="mb-6">
         <%= form.label :status, class: label_class %>
-          <%= form.select :capacity, [['Active','active'], ['Cancelled','Cancelled'], ['Delayed','delayed']], {}, class:'form-control' %>
+          <%= form.select :status, [['Active','active'], ['Cancelled','Cancelled'], ['Delayed','delayed']], {}, class: 'form-control' %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>

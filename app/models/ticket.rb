@@ -4,14 +4,12 @@ class Ticket < ApplicationRecord
   belongs_to :bus
 
   validates_presence_of :passenger, :route, :bus, :booking_date, :seat_number
-  validates_numericality_of :seat_number
 
-    before_save :set_default_fare
+  before_save :set_default_fare
   
-    private
-  
-    def set_default_fare
-      self.fare ||= 7000
-    end
-  
+  private
+
+  def set_default_fare
+    self.fare ||= 7000
+  end
 end

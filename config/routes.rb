@@ -1,8 +1,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :schedules
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :buses
   resources :drivers
   resources :passengers

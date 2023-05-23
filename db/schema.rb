@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_23_065618) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_091452) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -109,13 +109,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_065618) do
     t.integer "bus_id", null: false
     t.time "departure_time"
     t.time "arrival_time"
-    t.integer "duration_id", null: false
+    t.integer "duration"
     t.string "frequency"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bus_id"], name: "index_schedules_on_bus_id"
-    t.index ["duration_id"], name: "index_schedules_on_duration_id"
     t.index ["route_id"], name: "index_schedules_on_route_id"
   end
 
@@ -152,7 +151,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_065618) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "buses", "drivers"
   add_foreign_key "schedules", "buses"
-  add_foreign_key "schedules", "durations"
   add_foreign_key "schedules", "routes"
   add_foreign_key "tickets", "buses"
   add_foreign_key "tickets", "passengers"

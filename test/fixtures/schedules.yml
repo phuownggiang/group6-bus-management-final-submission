@@ -3,17 +3,17 @@
 one:
   route: one
   bus: one
-  departure_time: 2023-05-23 13:56:18
-  arrival_time: 2023-05-23 13:56:18
-  duration: one
+  departure_time: 2023-05-23 16:14:52
+  arrival_time: 2023-05-23 16:14:52
+  duration: 1
   frequency: MyString
   status: MyString
 
 two:
   route: two
   bus: two
-  departure_time: 2023-05-23 13:56:18
-  arrival_time: 2023-05-23 13:56:18
-  duration: two
+  departure_time: 2023-05-23 16:14:52
+  arrival_time: 2023-05-23 16:14:52
+  duration: 1
   frequency: MyString
   status: MyString

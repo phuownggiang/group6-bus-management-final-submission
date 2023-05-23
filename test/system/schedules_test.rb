@@ -17,7 +17,7 @@ class SchedulesTest < ApplicationSystemTestCase
     fill_in "Arrival time", with: @schedule.arrival_time
     fill_in "Bus", with: @schedule.bus_id
     fill_in "Departure time", with: @schedule.departure_time
-    fill_in "Duration", with: @schedule.duration_id
+    fill_in "Duration", with: @schedule.duration
     fill_in "Frequency", with: @schedule.frequency
     fill_in "Route", with: @schedule.route_id
     fill_in "Status", with: @schedule.status
@@ -34,7 +34,7 @@ class SchedulesTest < ApplicationSystemTestCase
     fill_in "Arrival time", with: @schedule.arrival_time
     fill_in "Bus", with: @schedule.bus_id
     fill_in "Departure time", with: @schedule.departure_time
-    fill_in "Duration", with: @schedule.duration_id
+    fill_in "Duration", with: @schedule.duration
     fill_in "Frequency", with: @schedule.frequency
     fill_in "Route", with: @schedule.route_id
     fill_in "Status", with: @schedule.status

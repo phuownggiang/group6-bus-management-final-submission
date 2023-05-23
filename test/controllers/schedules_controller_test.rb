@@ -17,7 +17,7 @@ class SchedulesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create schedule" do
     assert_difference("Schedule.count") do
-      post schedules_url, params: { schedule: { arrival_time: @schedule.arrival_time, bus_id: @schedule.bus_id, departure_time: @schedule.departure_time, duration_id: @schedule.duration_id, frequency: @schedule.frequency, route_id: @schedule.route_id, status: @schedule.status } }
+      post schedules_url, params: { schedule: { arrival_time: @schedule.arrival_time, bus_id: @schedule.bus_id, departure_time: @schedule.departure_time, duration: @schedule.duration, frequency: @schedule.frequency, route_id: @schedule.route_id, status: @schedule.status } }
     end
 
     assert_redirected_to schedule_url(Schedule.last)
@@ -34,7 +34,7 @@ class SchedulesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update schedule" do
-    patch schedule_url(@schedule), params: { schedule: { arrival_time: @schedule.arrival_time, bus_id: @schedule.bus_id, departure_time: @schedule.departure_time, duration_id: @schedule.duration_id, frequency: @schedule.frequency, route_id: @schedule.route_id, status: @schedule.status } }
+    patch schedule_url(@schedule), params: { schedule: { arrival_time: @schedule.arrival_time, bus_id: @schedule.bus_id, departure_time: @schedule.departure_time, duration: @schedule.duration, frequency: @schedule.frequency, route_id: @schedule.route_id, status: @schedule.status } }
     assert_redirected_to schedule_url(@schedule)
   end
 
