@@ -1,2 +1,6 @@
 Body {
-    background-image: url("12345.jpg");background-attachment:fixed;background-position:center center;}
+    background-image: url("card.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom -200px ;
+    }
