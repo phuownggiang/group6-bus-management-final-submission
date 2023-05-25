@@ -1,5 +1,6 @@
 class BusesController < ApplicationController
-  before_action :set_bus, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:show]
+  before_action :set_bus, only: [:show, :edit, :update, :destroy]
 
   # GET /buses or /buses.json
   def index

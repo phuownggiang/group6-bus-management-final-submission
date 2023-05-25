@@ -6,8 +6,8 @@
       <%= link_to tickets_path, class: button_class(theme: "transparent") do %>
       All Tickets
       <% end %>
-      <%= link_to edit_ticket_path(@ticket), class: button_class(theme:"primary") do %>
-      Edit
+      <% if user_signed_in? %>
+        <%= link_to 'Edit Ticket', edit_ticket_path(@ticket) %>
       <% end %>
     </div>
   </div>

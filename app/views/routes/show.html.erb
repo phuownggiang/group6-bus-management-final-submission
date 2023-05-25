@@ -6,8 +6,8 @@
       <%= link_to routes_path, class: button_class(theme: "transparent") do %>
       All Routes
       <% end %>
-      <%= link_to edit_route_path(@route), class: button_class(theme:"primary") do %>
-      Edit
+      <% if user_signed_in? %>
+        <%= link_to 'Edit Route', edit_route_path(@route) %>
       <% end %>
     </div>
   </div>

@@ -6,8 +6,8 @@
       <%= link_to buses_path, class: button_class(theme: "transparent") do %>
       All Buses
       <% end %>
-      <%= link_to edit_bus_path(@bus), class: button_class(theme:"primary") do %>
-      Edit
+      <% if user_signed_in? %>
+        <%= link_to 'Edit Bus', edit_bus_path(@bus) %>
       <% end %>
     </div>
   </div>

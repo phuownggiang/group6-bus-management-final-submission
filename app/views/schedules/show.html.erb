@@ -6,8 +6,8 @@
       <%= link_to schedules_path, class: button_class(theme: "transparent") do %>
       All Schedules
       <% end %>
-      <%= link_to edit_schedule_path(@schedule), class: button_class(theme:"primary") do %>
-      Edit
+      <% if user_signed_in? %>
+        <%= link_to 'Edit Schedule', edit_schedule_path(@schedule) %>
       <% end %>
     </div>
   </div>

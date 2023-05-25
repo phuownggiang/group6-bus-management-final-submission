@@ -1,5 +1,6 @@
 class DriversController < ApplicationController
-  before_action :set_driver, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:show]
+  before_action :set_driver, only: [:show, :edit, :update, :destroy]
 
   # GET /drivers or /drivers.json
   def index

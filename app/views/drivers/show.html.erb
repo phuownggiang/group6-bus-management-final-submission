@@ -4,18 +4,19 @@
 
     <div class="flex-wrap lg:flex items-center lg:space-x-3">
       <%= link_to drivers_path, class: button_class(theme: "transparent") do %>
-      All Drivers
+        All Drivers
       <% end %>
-      <%= link_to edit_driver_path(@driver), class: button_class(theme:"primary") do %>
-      Edit
+
+      <% if user_signed_in? %>
+        <%= link_to 'Edit Driver', edit_driver_path(@driver) %>
       <% end %>
     </div>
   </div>
 
   <ul class="text-slate-700">
-      <li>
-        <p class="font-semibold">Name:</p>
-        <p><%= @driver.name %></p>
+    <li>
+      <p class="font-semibold">Name:</p>
+      <p><%= @driver.name %></p>
       </li>
       <li>
         <p class="font-semibold">Phone number:</p>

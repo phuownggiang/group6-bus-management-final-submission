@@ -6,8 +6,8 @@
       <%= link_to passengers_path, class: button_class(theme: "transparent") do %>
       All Passengers
       <% end %>
-      <%= link_to edit_passenger_path(@passenger), class: button_class(theme:"primary") do %>
-      Edit
+      <% if user_signed_in? %>
+        <%= link_to 'Edit Passenger', edit_passenger_path(@passenger) %>
       <% end %>
     </div>
   </div>
